@@ -1,0 +1,49 @@
+<!-- Esta vista se utiliza para el ArticleNewComponent y el ArticleEditComponent -->
+<div class="center">
+  <section id="content">
+    <!-- Titulo de la pagina dependiendo del componente -->
+    <h1 class="subheader">{{page_title}}</h1>
+
+    <form class="mid-form" #articleForm="ngForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="title">Titulo</label>
+        <!-- [(ngModel)] indica que variable edita el campo -->
+        <input type="text" name="title" #title="ngModel" [(ngModel)]="article.title" required>
+
+        <!-- Comprobaciones -->
+        <small *ngIf="!title.valid && title.touched">El titulo no es valido</small>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Contenido</label>
+        <!-- [(ngModel)] indica que variable edita el campo -->
+        <textarea name="content" #content="ngModel" [(ngModel)]="article.content" required></textarea>
+
+        <!-- Comprobaciones -->
+        <small *ngIf="!content.valid && content.touched">El contenido no es valido</small>
+
+      </div>
+
+      <div class="form-group">
+        <!-- La variable es_edit solo es true en el ArticleEdit -->
+        <div class="image-thumb" *ngIf="is_edit">
+          <img src="https://www.blogdelfotografo.com/wp-content/uploads/2014/08/61.jpg" alt="Imagen"
+            *ngIf="!article.image || article.image == null">
+          <img src="{{url + 'get-image/' + article.image}}" alt="Imagen" *ngIf="article.image">
+        </div>
+
+        <label for="image">Imagen</label>
+        <!-- Cuando se pulse en el input se llama al metodo -->
+        <input type="file" name="file0" (change)="getFile($event)">
+      </div>
+
+      <div class="clearfix"></div>
+
+      <!-- [disabled] desabilita el boton hasta que la variable sea false -->
+      <input type="submit" value="Guardar" class="btn btn-success" [disabled]="articleForm.invalid">
+    </form>
+
+  </section>
+  <app-sidebar></app-sidebar>
+</div>

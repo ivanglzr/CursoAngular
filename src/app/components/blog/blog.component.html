@@ -1,0 +1,11 @@
+<!-- La propiedad nombre indica el texto del slider y la propiedad size cambia la clase para que sea mas pequeño -->
+<app-slider [nombre]="'Blog'" [size]="'small'"></app-slider>
+<div class="center">
+  <section id="content">
+    <h1 class="subheader">Pagina del blog</h1>
+
+    <!-- Carga los articulos con el componente articles y mediante el Input se le pasan los articulos -->
+    <app-articles [articles]="articles"></app-articles>
+  </section>
+  <app-sidebar></app-sidebar>
+</div>

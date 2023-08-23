@@ -1,0 +1,27 @@
+<div class="center">
+  <section id="content">
+    <article class="article-item article-detail">
+
+      <!-- Comprobar si el articulo tiene imagen y si no mostrar una predeterminada -->
+      <div class="image-wrap">
+        <img src="https://www.blogdelfotografo.com/wp-content/uploads/2014/08/61.jpg" alt="Imagen"
+          *ngIf="!article.image || article.image == null">
+        <img src="{{url + 'get-image/' + article.image}}" alt="Imagen" *ngIf="article.image">
+      </div>
+
+      <!-- Datos del articulo -->
+      <h1 class="subheader">{{article.title}}</h1>
+      <span class="date">{{article.date | amLocale: 'es' | amTimeAgo}}</span>
+      <pre>{{article.content}}</pre>
+
+      <!-- Botones de editar y borrar -->
+      <div class="buttons">
+        <a [routerLink]="['/blog/editar', article._id]" class="btn btn-warning">Editar</a>
+        <a (click)="delete(article._id)" class="btn btn-danger">Borrar</a>
+      </div>
+
+      <div class="clearfix"></div>
+    </article>
+  </section>
+  <app-sidebar></app-sidebar>
+</div>

@@ -1,0 +1,25 @@
+<!-- Dependiendo del estado de los articulos carga un div u otro -->
+<div class="loading" *ngIf="!articles ">Cargando ...</div>
+<div class="loading" *ngIf="articles && articles.length == 0">No hay articulos para mostrar</div>
+
+<div id="articles" *ngIf="articles">
+  <!-- Carga los articulos con un bucle -->
+  <article class="article-item" id="article-template" *ngFor="let article of articles">
+    <div class="image-wrap">
+      <!-- Carga una imagen predeterminada si no existe una -->
+      <img src="{{url + 'get-image/' + article.image}}" alt="{{article.title}}" *ngIf="article.image">
+      <img src="../../../assets/images/angular.png" alt="{{article.title}}" *ngIf="!article.image">
+    </div>
+
+    <!-- Datos del articulo -->
+    <h2>{{article.title}}</h2>
+
+    <span class="date">{{article.date | amLocale: 'es' | amTimeAgo}}</span>
+
+    <!-- Redirige a la pagina individual del articulo -->
+    <a [routerLink]="['/blog/articulo', article._id]">Leer mas</a>
+
+    <div class="clearfix"></div>
+
+  </article>
+</div>

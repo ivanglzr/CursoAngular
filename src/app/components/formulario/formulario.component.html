@@ -1,0 +1,60 @@
+<app-slider [nombre]="'Formulario'" [size]="'small'"></app-slider>
+<div class="center">
+  <section id="content">
+    <h1 class="subheader">Formulario</h1>
+
+    <!-- Cuando se pulse el boton de submit se ejecuta la funcion onSubmit -->
+    <form class="mid-form" #userForm="ngForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <!-- Edita la variable user.nombre. pattern indica que caracteres debe contener -->
+        <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="user.nombre" required pattern="[a-zA-Z]+">
+
+        <!-- Comprobaciones -->
+        <small *ngIf="!nombre.valid && nombre.touched">El nombre no es valido</small>
+      </div>
+
+      <div class="form-group">
+        <label for="apellidos">Apellidos</label>
+        <!-- Edita la variable user.apellidos -->
+        <input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="user.apellidos" required>
+
+        <!-- Comprobaciones -->
+        <small *ngIf="!apellidos.valid && apellidos.touched">Los apellidos no son validos</small>
+      </div>
+
+      <div class="form-group">
+        <label for="bio">Biografia</label>
+        <!-- Edita la variable user.bio -->
+        <textarea name="bio" #bio="ngModel" [(ngModel)]="user.bio" required></textarea>
+
+        <!-- Comprobaciones -->
+        <small *ngIf="!bio.valid && bio.touched">La biografia no es valida</small>
+
+      </div>
+
+      <div class="form-group radibuttons">
+        <!-- Editan la variable user.genero -->
+        <input type="radio" name="genero" value="hombre" #genero="ngModel" [(ngModel)]="user.genero" required> Hombre
+        <input type="radio" name="genero" value="mujer" #genero="ngModel" [(ngModel)]="user.genero"> Mujer
+        <input type="radio" name="genero" value="otro" #genero="ngModel" [(ngModel)]="user.genero"> Otro
+
+        <!-- Comprobaciones -->
+        <small *ngIf="!genero.valid && genero.touched">El genero no es valido</small>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <!-- Hasta que userForm.invalid sea falso el input esta desabilitado -->
+      <input type="submit" value="Enviar" class="btn btn-success" [disabled]="userForm.invalid">
+    </form>
+
+    <h2 class="subheader">Eventos</h2>
+    <button (click)="hasDadoClick()">Click</button>
+    <input type="text" [(ngModel)]="campo" (keyup.enter)="hasSalido()">
+    {{campo}}
+
+  </section>
+  <app-sidebar></app-sidebar>
+</div>

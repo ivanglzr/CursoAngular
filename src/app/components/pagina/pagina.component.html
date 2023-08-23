@@ -1,0 +1,24 @@
+<!-- El nombre indica el texto del slider -->
+<app-slider [nombre]="'Pagina'"></app-slider>
+<div class="center">
+  <section id="content">
+    <h1 class="subheader">Pagina de prueba</h1>
+
+    <div *ngIf="nombre && apellidos; then siHayParametros; else noHayParametros">
+
+    </div>
+
+    <!-- Basandose en la variable se rellena el div con un ng-template u otro -->
+    <ng-template #siHayParametros>
+      <h2>El nombre es: {{ nombre }}</h2>
+      <h2>Los apellidos es: {{ apellidos }}</h2>
+    </ng-template>
+
+    <ng-template #noHayParametros>
+      <h2>No hay parametros en la URL</h2>
+    </ng-template>
+
+    <button (click)="redireccion()">Añadir parametros</button>
+  </section>
+  <app-sidebar></app-sidebar>
+</div>

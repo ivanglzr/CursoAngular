@@ -1,0 +1,530 @@
+body {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+
+  /* FUENTES */
+  font-family: "Segoe UI", Roboto;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+}
+
+#header {
+  background: white;
+  height: 120px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  border-top: 5px solid #f13e3e;
+}
+
+.center {
+  width: 75%;
+  margin: 0px auto;
+}
+
+.clearfix {
+  clear: both;
+  float: none;
+}
+
+#logo {
+  width: 30%;
+  font-size: 30px;
+  float: left;
+  margin-top: 35px;
+}
+
+#logo img {
+  display: block;
+  float: left;
+  height: 60px;
+  margin-top: -9px;
+  margin-right: 5px;
+  animation: latir infinite 5s linear;
+}
+
+@keyframes latir {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.02, 1.02);
+  }
+  55% {
+    transform: scale(0.95, 0.95);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+#brand {
+  display: block;
+  margin: 0px;
+  float: left;
+}
+
+#menu {
+  width: 70%;
+  float: right;
+  font-size: 18px;
+}
+
+#menu ul {
+  line-height: 85px;
+  width: 60%;
+  float: right;
+}
+
+#menu ul li {
+  display: inline-block;
+  list-style: none;
+  height: 46px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#menu a {
+  text-decoration: none;
+  color: #444;
+  transition: 300ms all;
+}
+
+#menu a:hover,
+.active {
+  color: #f13e3e !important;
+}
+
+.year-green {
+  display: block;
+  background: green;
+  color: white;
+  padding: 5px;
+  width: 121px;
+  text-align: center;
+}
+
+.year-red {
+  display: block;
+  background: red;
+  color: white;
+  padding: 5px;
+  width: 121px;
+  text-align: center;
+}
+
+#slider {
+  width: 100%;
+  height: 350px;
+  line-height: 320px;
+  color: white;
+  text-shadow: 0px 0px 5px #444;
+
+  background: rgba(248, 80, 50, 1);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(241, 62, 62, 1) 31%,
+    rgba(246, 41, 12, 1) 54%,
+    rgba(240, 47, 23, 1) 71%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(0%, rgba(248, 80, 50, 1)),
+    color-stop(31%, rgba(241, 62, 62, 1)),
+    color-stop(54%, rgba(246, 41, 12, 1)),
+    color-stop(71%, rgba(240, 47, 23, 1)),
+    color-stop(100%, rgba(231, 56, 39, 1))
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(241, 62, 62, 1) 31%,
+    rgba(246, 41, 12, 1) 54%,
+    rgba(240, 47, 23, 1) 71%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(241, 62, 62, 1) 31%,
+    rgba(246, 41, 12, 1) 54%,
+    rgba(240, 47, 23, 1) 71%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(241, 62, 62, 1) 31%,
+    rgba(246, 41, 12, 1) 54%,
+    rgba(240, 47, 23, 1) 71%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(241, 62, 62, 1) 31%,
+    rgba(246, 41, 12, 1) 54%,
+    rgba(240, 47, 23, 1) 71%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827', GradientType=1 );
+}
+
+#slider h1 {
+  line-height: 350px;
+  text-align: center;
+  height: 50px;
+  padding-bottom: 30px;
+}
+
+.btn-white {
+  display: inline;
+  background: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: none;
+  transition: 0.25s all;
+  color: #313131;
+}
+
+.btn-white:hover {
+  background: #434040;
+  color: white;
+}
+
+#slider.slider-small {
+  height: 150px;
+}
+
+#slider.slider-small h1 {
+  line-height: 150px;
+  text-align: center;
+  height: 50px;
+  padding-bottom: 30px;
+}
+
+#content {
+  width: 70%;
+  float: left;
+  min-height: 650px;
+  margin-right: 20px;
+}
+
+#sidebar {
+  width: 25%;
+  float: left;
+}
+
+.sidebar-item {
+  background: #f7f7f7;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+.sidebar-item h3 {
+  text-transform: uppercase;
+  font-size: 17px;
+  margin: 0px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #eee;
+}
+
+.sidebar-item .btn {
+  margin: 0px auto;
+  margin-top: 10px;
+}
+
+.btn {
+  display: block;
+  max-width: 120px;
+  background: #000;
+  color: #ffffff;
+  padding: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.2s all;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-success {
+  background: #0ebf3a;
+}
+
+.btn-success:hover {
+  background: #000;
+}
+
+.btn-warning {
+  background: #ffe330;
+  color: white !important;
+  text-decoration: none;
+  transition: all 0.15s linear;
+}
+
+.btn-danger {
+  background: #e40f0f;
+  color: white !important;
+  text-decoration: none;
+  transition: all 0.15s linear;
+}
+
+.btn-warning:hover,
+.btn-danger:hover {
+  opacity: 0.8;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.image-thumb img {
+  width: 300px;
+}
+.mid-form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.mid-form label {
+  display: block;
+  float: left;
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+
+input[type="text"],
+input[type="file"],
+textarea {
+  width: 100%;
+  height: 30px;
+  min-height: 30px;
+  border: 1px solid #ccc;
+  padding: 3px;
+  margin-bottom: 5px;
+  outline: none;
+  transition: 0.3s all;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  box-shadow: 0px 0px 3px #444 inset;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 300px;
+  min-height: 150px;
+}
+
+.radibuttons {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  float: left;
+}
+
+#footer {
+  background: #f7f7f7;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  color: #444;
+}
+
+#footer p {
+  margin: 0;
+  padding: 0;
+}
+
+.article-item {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: left;
+}
+
+.article-item .image-wrap {
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  float: left;
+  margin-right: 15px;
+  border: 1px solid #ccc;
+}
+
+.article-item .image-wrap img {
+  height: 100%;
+  text-align: center;
+}
+
+.article-item h2 {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 7px;
+}
+
+.article-item .date {
+  display: block;
+  width: 100%;
+  color: #686868;
+}
+
+.article-item a {
+  display: block;
+  color: #444;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.article-item a:hover {
+  text-decoration: underline;
+}
+
+pre {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.subheader {
+  font-size: 38px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.article-detail .image-wrap {
+  width: 100%;
+  height: 300px;
+  float: none;
+}
+
+.article-detail .image-wrap img {
+  width: 100%;
+  height: auto;
+}
+
+.article-detail .subheader {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  border: none;
+}
+
+@media (max-width: 1490px) {
+  .center {
+    width: 85%;
+  }
+}
+
+@media (max-width: 1313px) {
+  .center {
+    width: 95%;
+  }
+  #menu ul {
+    width: auto;
+  }
+}
+
+@media (max-width: 881px) {
+  #brand {
+    width: 60%;
+  }
+
+  #menu {
+    width: auto;
+  }
+}
+
+@media (max-width: 828px) {
+  #logo {
+    float: none;
+    width: 240px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  #menu,
+  #menu ul {
+    clear: both;
+    float: none;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    line-height: 43px;
+  }
+
+  #content {
+    float: none;
+    width: 100%;
+  }
+
+  #sidebar {
+    float: none;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+  .mid-form {
+    width: 70%;
+  }
+}
+
+@media (max-width: 494px) {
+  #header {
+    min-height: 130px;
+    overflow: hidden;
+  }
+
+  #menu,
+  #menu ul {
+    line-height: 50px;
+  }
+
+  #menu ul li {
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+
+  #slider {
+    height: 155px;
+    line-height: 10px;
+    margin-bottom: 20px;
+  }
+
+  #slider h1 {
+    height: auto;
+    line-height: 50px;
+    font-size: 19px;
+  }
+
+  #slider.slider-small {
+    height: 100px;
+  }
+  #slider.slider-small h1 {
+    padding-top: 35px;
+    line-height: 30px;
+  }
+}

@@ -1,0 +1,10 @@
+<!-- Dependiendo de la variable size se carga una clase u otra -->
+<div id="slider" [ngClass]="{
+  'slider-big': !size || size == 'big',
+  'slider-small': size == 'small',
+}">
+  <!-- El texto nombre se pasa al cargar el slider -->
+  <h1>{{nombre}}</h1>
+  <!-- El link solo se carga si el slider es big -->
+  <a [routerLink]="['/blog']" class="btn-white" *ngIf="!size || size == 'big'">Ir al blog</a>
+</div>
